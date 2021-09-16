@@ -48,7 +48,7 @@ font-weight: bold;
 color: ${tertiary}
 `
 
-export const StyledForm = styled.View `
+export const StyledFormArea = styled.View `
 
 
 `
