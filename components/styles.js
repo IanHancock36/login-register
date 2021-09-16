@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 import {View,Text,Image} from 'react-native'
 import Constants from 'expo-constants'
 // colors 
@@ -38,5 +38,17 @@ text-align: center;
 font-weight: bold;
 color: ${brand};
 padding: 10px;
+`
+
+export const SubTitle = styled.text `
+font-size : 18px;
+margin-bottom: 20px;
+letter-spacing: 1 px;
+font-weight: bold;
+color: ${tertiary}
+`
+
+export const StyledForm = styled.View `
+
 
 `
