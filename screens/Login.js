@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar'
 import { Formik } from 'formik'
 const Login = () => {
     return(
-        <StyledContainer>
+        <StyledContainer >
             <StatusBar style ='dark'/>
         <InnerContainer>
             <PageLogo resizeMode='cover'/>

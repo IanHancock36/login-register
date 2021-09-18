@@ -1,10 +1,11 @@
 import styled from 'styled-components/native'
+import React from 'react'
 import {View,Text,Image} from 'react-native'
 import Constants from 'expo-constants'
 // colors 
 const StatusBarHeight = Constants.statusBarHeight 
 export const Colors = {
-    primary: "#fffff",
+    primary: '#FFFFFF',
     secondary: "#E5E7EB",
     tertiary: "#1F2937",
     darkLight:"#9CA3AF",
@@ -18,8 +19,8 @@ const {primary,secondary,tertiary,brand,green,red,darkLight} = Colors
 export const StyledContainer = styled.View`
 flex: 1;
 padding: 25px ;
-background-color: ${primary}
-padding-top:${StatusBarHeight + 10}px
+
+padding-top:${StatusBarHeight + 10}px;
 `
 export const InnerContainer = styled.View `
 flex: 1;
@@ -33,19 +34,19 @@ height: 200px;
 `
 
 export const PageTitle = styled.Text `
-font-size: 30px;
+font-size: 30;
 text-align: center;
 font-weight: bold;
 color: ${brand};
 padding: 10px;
 `
 
-export const SubTitle = styled.text `
-font-size : 18px;
-margin-bottom: 20px;
-letter-spacing: 1 px;
+export const SubTitle = styled.Text `
+font-size: 18;
+margin-bottom: 20;
+letter-spacing: 1 ;
 font-weight: bold;
-color: ${tertiary}
+color: ${tertiary};
 `
 
 export const StyledFormArea = styled.View `
