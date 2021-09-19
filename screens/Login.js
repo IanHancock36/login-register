@@ -7,6 +7,16 @@ import { Octicons } from '@expo/vector-icons'
 import { StatusBar } from 'expo-status-bar'
 import { Formik } from 'formik'
 const { brand, darkLight } = Colors
+const MyTextInput =({label, icon, isPassword, hidePassword, setHidePassword, ...props }) => {
+    return (
+        <View>
+            <LeftIcon>
+            <Octicons name={icon} size={30} color={brand} />
+            </LeftIcon>
+
+        </View>
+    )
+}
 const Login = () => {
     return (
         <StyledContainer >
