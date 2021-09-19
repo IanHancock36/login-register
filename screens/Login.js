@@ -1,23 +1,15 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {
     Colors, StyledContainer, InnerContainer, WelcomeContainer, PageLogo, Avatar, WelcomeImage, PageTitle, SubTitle, StyledTextInput, StyledInputLabel, LeftIcon, RightIcon, StyledButton, ButtonText, MsgBox, Line, StyledFormArea, ExtraView, ExtraText, TextLink, TextLinkContent
 } from './../components/styles'
 import { View } from 'react-native';
-import { Octicons } from '@expo/vector-icons'
+import { Octicons ,Ionicons } from '@expo/vector-icons'
 import { StatusBar } from 'expo-status-bar'
 import { Formik } from 'formik'
 const { brand, darkLight } = Colors
-const MyTextInput =({label, icon, isPassword, hidePassword, setHidePassword, ...props }) => {
-    return (
-        <View>
-            <LeftIcon>
-            <Octicons name={icon} size={30} color={brand} />
-            </LeftIcon>
 
-        </View>
-    )
-}
 const Login = () => {
+ const [hidePassword , setHidePassword] =useState =('')
     return (
         <StyledContainer >
             <StatusBar style='dark' />
@@ -32,7 +24,7 @@ const Login = () => {
                 onSubmit={(values) => {console.log(values)}}
             >
                 {({ handleChange, handleBlur, handleSubmit, values }) => (<StyledFormArea>
-                    <MyTextInput
+                    <TextInput
                         label='Email Address'
                         icon='mail'
                         placeholder='Email Address'
@@ -42,7 +34,7 @@ const Login = () => {
                         value={values.email}
                         keyboardType='email-address'
                     />
-                    <MyTextInput
+                    <TextInput
                         label='Password'
                         icon='lock'
                         placeholder='*********'
@@ -51,13 +43,14 @@ const Login = () => {
                         onBlur={handleBlur('')}
                         value={values.password}
                         secureTextEntry ={true}
+                        isPassword ={true}
                     />
                 </StyledFormArea>)}
             </Formik>
         </StyledContainer>
     )
 }
-const TextInput = ({ label, icon, ...props }) => {
+const TextInput = ({ label, icon,isPassword, ...props }) => {
     return (
         <View>
             <LeftIcon>
@@ -65,6 +58,11 @@ const TextInput = ({ label, icon, ...props }) => {
             </LeftIcon>
             <StyledInputLabel>{label}</StyledInputLabel>
             <StyledTextInput {...props} />
+            {isPassword && (
+                <RightIcon>
+<Ionicons size={30} color={darkLight} />
+                </RightIcon>
+            )}
 
         </View>
     )
