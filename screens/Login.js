@@ -1,8 +1,9 @@
 import React from 'react'
 import {
-    StyledContainer, InnerContainer, PageLogo, PageTitle, SubTitle, StyledFormArea
+    Colors,StyledContainer,InnerContainer,WelcomeContainer, PageLogo, Avatar,WelcomeImage, PageTitle,SubTitle,StyledTextInput,StyledInputLabel, LeftIcon,RightIcon,StyledButton, ButtonText,MsgBox,Line,StyledFormArea,ExtraView,ExtraText, TextLink,TextLinkContent
 } from './../components/styles'
-import {View} from 'react-native';
+import { View } from 'react-native';
+import{ Octicons } from '@expo/vector-icons'
 import { StatusBar } from 'expo-status-bar'
 import { Formik } from 'formik'
 const Login = () => {
@@ -29,6 +30,9 @@ const Login = () => {
 const TextInput = ({label,icon,...props}) => {
     return (
         <View>
+            <LeftIcon>
+<Octicons name={icon} size ={30}/>
+            </LeftIcon>
             
         </View>
     )
