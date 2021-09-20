@@ -90,7 +90,7 @@ export const StyledTextInput = styled.TextInput`
   padding-right: 55px;
   border-radius: 5px;
   font-size: 16px;
-  height: 60px;
+  height: 50px;
   margin-vertical: 3px;
   margin-bottom: 10px;
   color: ${tertiary};
