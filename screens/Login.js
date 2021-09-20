@@ -17,13 +17,13 @@ const Login = () => {
                 <PageLogo resizeMode='cover' source={require("./../assets/19012019-02.jpg")} />
                 <PageTitle>M</PageTitle>
                 <SubTitle>Account Login</SubTitle>
-                <Formik></Formik>
-            </InnerContainer>
+                </InnerContainer>
             <Formik
                 initialValues={{ email: '', password: '' }}
                 onSubmit={(values) => { console.log(values) }}
             >
-                {({ handleChange, handleBlur, handleSubmit, values }) => (<StyledFormArea>
+                {({ handleChange, handleBlur, handleSubmit, values }) => (
+                <StyledFormArea>
                     <TextInput
                         label='Email Address'
                         icon='mail'
@@ -48,12 +48,15 @@ const Login = () => {
                         setHidePassword ={setHidePassword}
 
                     />
+                    <StyledButton onPress={handleSubmit}>
+                    <ButtonText>Login</ButtonText>
+                    </StyledButton>
                 </StyledFormArea>)}
             </Formik>
         </StyledContainer>
     )
 }
-const TextInput = ({ label, icon, isPassword, ...props }) => {
+const TextInput = ({ label, icon, isPassword,hidePassword,setHidePassword, ...props }) => {
     return (
         <View>
             <LeftIcon>
@@ -62,8 +65,8 @@ const TextInput = ({ label, icon, isPassword, ...props }) => {
             <StyledInputLabel>{label}</StyledInputLabel>
             <StyledTextInput {...props} />
             {isPassword && (
-                <RightIcon>
-                    <Ionicons size={30} color={darkLight} />
+                <RightIcon onPress={()=> setHidePassword(!hidePassword)}>
+                    <Ionicons name ={hidePassword ? 'md-eye-off' : 'md-eye'} size={30} color={darkLight} />
                 </RightIcon>
             )}
 
