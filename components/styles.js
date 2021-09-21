@@ -129,7 +129,8 @@ export const StyledButton = styled.TouchableOpacity`
     `
     background-color: ${green};
     flex-direction: row;
-    justify-content: center;
+    justify-content :center;
+
   `}
 `;
 
@@ -140,7 +141,10 @@ export const ButtonText = styled.Text`
     props.google == true &&
     `
     color: ${primary};
-    padding: 25px;
+   padding:25px
+
+   
+  
   `}
 `;
 

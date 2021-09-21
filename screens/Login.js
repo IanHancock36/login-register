@@ -3,10 +3,10 @@ import {
     Colors, StyledContainer, InnerContainer, WelcomeContainer, PageLogo, Avatar, WelcomeImage, PageTitle, SubTitle, StyledTextInput, StyledInputLabel, LeftIcon, RightIcon, StyledButton, ButtonText, MsgBox, Line, StyledFormArea, ExtraView, ExtraText, TextLink, TextLinkContent
 } from './../components/styles'
 import { View } from 'react-native';
-import { Octicons, Ionicons } from '@expo/vector-icons'
+import { Octicons, Ionicons, Fontisto } from '@expo/vector-icons'
 import { StatusBar } from 'expo-status-bar'
 import { Formik } from 'formik'
-const { brand, darkLight } = Colors
+const { brand, darkLight ,primary } = Colors
 
 const Login = () => {
      const [hidePassword , setHidePassword] =useState(true)
@@ -48,9 +48,19 @@ const Login = () => {
                         setHidePassword ={setHidePassword}
 
                     />
+                    <MsgBox></MsgBox>
                     <StyledButton onPress={handleSubmit}>
                     <ButtonText>Login</ButtonText>
                     </StyledButton>
+                    <Line/>
+                    <StyledButton google={true} onPress={handleSubmit}>
+                        <Fontisto  name ="google" color={primary} size ={20}/>
+                    <ButtonText google={true}>Google Sign In</ButtonText>
+                    </StyledButton>
+                    <ExtraView>
+                        <ExtraText> Don't have an account already? </ExtraText>
+                        <TextLink>Sign Up</TextLink>
+                    </ExtraView>
                 </StyledFormArea>)}
             </Formik>
         </StyledContainer>
